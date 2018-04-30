@@ -19,7 +19,7 @@ export default {
       timer: 25,
     };
   },
-  computed: {
+  methods: {
     play() {
       return console.log('play');
     },
