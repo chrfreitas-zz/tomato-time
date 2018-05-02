@@ -11,12 +11,15 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.on-work {
+  background-color: #c0392b;
+}
+
+.on-short-break {
+  background-color: #27ae60;
+}
+
+.on-long-break {
+  background-color: #2980b9;
 }
 </style>
