@@ -1,4 +1,4 @@
-const TimerStore = {
+const timerStore = {
   state: {
     state: 'OnWork',
     number: 25,
@@ -15,4 +15,4 @@ const TimerStore = {
   },
 };
 
-export default TimerStore;
+export default timerStore;
