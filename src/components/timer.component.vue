@@ -13,7 +13,7 @@
 
 <script>
 import moment from 'moment';
-import timerConstant from './constants/timer.constant';
+import TIMER_CONSTANTS from './constants/timer.constant';
 
 export default {
   name: 'Timer',
@@ -28,19 +28,22 @@ export default {
     play() {
       this.intervalId = setInterval(() => {
         this.timer -= 1;
-        this.timerFormatted = moment(this.timer * 1000).format('mm:ss');
+        this.timerFormatted = this.convertToMinute(this.timer);
       }, 1000);
-      return console.log('play');
     },
     pause() {
       clearInterval(this.intervalId);
-      return console.log('pause');
     },
     stop() {
-      clearInterval(this.intervalId);
-      this.timer = timerConstant.working.seconds;
-      this.timerFormatted = moment(this.timer * 1000).format('mm:ss');
-      return console.log('stop');
+      this.pause();
+      this.refresh();
+    },
+    refresh() {
+      this.timer = TIMER_CONSTANTS.working.seconds;
+      this.timerFormatted = this.convertToMinute(this.timer);
+    },
+    convertToMinute(timer) {
+      return moment(timer * 1000).format('mm:ss');
     },
   },
 };

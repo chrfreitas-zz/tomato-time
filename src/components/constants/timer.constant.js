@@ -1,4 +1,4 @@
-const timerConstant = {
+const TIMER_CONSTANTS = {
   working: {
     stateName: 'onWorking',
     seconds: 1500,
@@ -13,4 +13,4 @@ const timerConstant = {
   },
 };
 
-export default timerConstant;
+export default TIMER_CONSTANTS;
