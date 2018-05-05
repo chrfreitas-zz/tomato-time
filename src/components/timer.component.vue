@@ -8,6 +8,10 @@
       <button class="pause" v-on:click="pause">Pause</button>
       <button class="stop" v-on:click="stop">Stop</button>
     </div>
+    <div>
+      <button v-on:click="changeStateTo">Next</button>
+      <button v-on:click="changeStateTo">Previous</button>
+    </div>
   </div>
 </template>
 
@@ -15,24 +19,32 @@
 import moment from 'moment';
 import TIMER_CONSTANTS from './constants/timer.constant';
 
+let intervalId = 0;
+
 export default {
   name: 'Timer',
   data() {
     return {
       timer: 1500,
-      timerFormatted: '25:00',
-      intervalId: 0,
     };
+  },
+  computed: {
+    timerFormatted() {
+      return this.convertToMinute(this.timer);
+    },
   },
   methods: {
     play() {
-      this.intervalId = setInterval(() => {
+      if (!intervalId) {
+        return;
+      }
+
+      intervalId = setInterval(() => {
         this.timer -= 1;
-        this.timerFormatted = this.convertToMinute(this.timer);
       }, 1000);
     },
     pause() {
-      clearInterval(this.intervalId);
+      clearInterval(intervalId);
     },
     stop() {
       this.pause();
@@ -40,10 +52,12 @@ export default {
     },
     refresh() {
       this.timer = TIMER_CONSTANTS.working.seconds;
-      this.timerFormatted = this.convertToMinute(this.timer);
     },
-    convertToMinute(timer) {
+    convertToMinute(timer = 0) {
       return moment(timer * 1000).format('mm:ss');
+    },
+    changeStateTo(state) {
+      console.log(state);
     },
   },
 };
