@@ -1,7 +1,7 @@
 <template>
   <div class="timer">
     <div class="counter">
-      {{ timer }}
+      {{ timerFormatted }}
     </div>
     <div class="controls">
       <button class="play" v-on:click="play">Play</button>
@@ -12,21 +12,34 @@
 </template>
 
 <script>
+import moment from 'moment';
+import timerConstant from './constants/timer.constant';
+
 export default {
   name: 'Timer',
   data() {
     return {
-      timer: 25,
+      timer: 1500,
+      timerFormatted: '25:00',
+      intervalId: 0,
     };
   },
   methods: {
     play() {
+      this.intervalId = setInterval(() => {
+        this.timer -= 1;
+        this.timerFormatted = moment(this.timer * 1000).format('mm:ss');
+      }, 1000);
       return console.log('play');
     },
     pause() {
+      clearInterval(this.intervalId);
       return console.log('pause');
     },
     stop() {
+      clearInterval(this.intervalId);
+      this.timer = timerConstant.working.seconds;
+      this.timerFormatted = moment(this.timer * 1000).format('mm:ss');
       return console.log('stop');
     },
   },
