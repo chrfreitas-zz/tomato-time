@@ -9,8 +9,8 @@
       <button class="stop" v-on:click="stop">Stop</button>
     </div>
     <div>
-      <button v-on:click="changeStateTo">Next</button>
-      <button v-on:click="changeStateTo">Previous</button>
+      <button v-on:click="changeStateTo(1)">Next</button>
+      <button v-on:click="changeStateTo(-1)">Previous</button>
     </div>
   </div>
 </template>
@@ -25,22 +25,27 @@ export default {
   name: 'Timer',
   data() {
     return {
-      timer: 1500,
+      timer: {},
+      timers: TIMER_CONSTANTS,
     };
+  },
+  created() {
+    this.reset();
   },
   computed: {
     timerFormatted() {
-      return this.convertToMinute(this.timer);
+      return this.convertToMinute(this.timer.seconds);
     },
   },
   methods: {
     play() {
-      if (!intervalId) {
+      if (intervalId) {
         return;
       }
 
+      this.timer.seconds -= 1;
       intervalId = setInterval(() => {
-        this.timer -= 1;
+        this.timer.seconds -= 1;
       }, 1000);
     },
     pause() {
@@ -48,16 +53,16 @@ export default {
     },
     stop() {
       this.pause();
-      this.refresh();
+      this.reset();
     },
-    refresh() {
-      this.timer = TIMER_CONSTANTS.working.seconds;
+    reset() {
+      this.timer = TIMER_CONSTANTS[0];
     },
     convertToMinute(timer = 0) {
       return moment(timer * 1000).format('mm:ss');
     },
-    changeStateTo(state) {
-      console.log(state);
+    changeStateTo(index) {
+      this.timer = this.timers[this.timer.position + index];
     },
   },
 };

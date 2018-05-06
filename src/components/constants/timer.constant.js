@@ -1,16 +1,20 @@
-const TIMER_CONSTANTS = {
-  working: {
+const TIMER_CONSTANTS = [
+  {
+    position: 0,
     stateName: 'onWorking',
     seconds: 1500,
   },
-  shortBreak: {
+  {
+    position: 1,
     stateName: 'onShortBreak',
     seconds: 300,
   },
-  longBreak: {
-    state: 'onLongBreak',
+  {
+    position: 2,
+    stateName: 'onLongBreak',
     seconds: 900,
   },
-};
+];
+
 
 export default TIMER_CONSTANTS;

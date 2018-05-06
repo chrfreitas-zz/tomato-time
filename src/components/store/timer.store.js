@@ -1,7 +1,6 @@
 const timerStore = {
   state: {
-    state: 'OnWork',
-    number: 25,
+
   },
   mutations: {
     changeState(state, payload) {
