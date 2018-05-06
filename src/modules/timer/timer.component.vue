@@ -2,7 +2,7 @@
   <div class="timer">
     <counter v-bind:timer="timer"/>
     <control />
-    <actions v-bind:position="timer.position"  timers="timers" />
+    <actions v-bind:position="timer.position" />
   </div>
 </template>
 
@@ -10,7 +10,8 @@
 import control from './components/control/control.component';
 import counter from './components/counter/counter.component';
 import actions from './components/actions/actions.component';
-import TIMER_CONSTANTS from './constants/timer.constant';
+
+import { TIMER_DEFAULT } from './constants/timer.constant';
 
 let intervalId = 0;
 
@@ -19,7 +20,6 @@ export default {
   data() {
     return {
       timer: {},
-      timers: TIMER_CONSTANTS,
     };
   },
   components: {
@@ -49,7 +49,7 @@ export default {
       this.reset();
     },
     reset() {
-      this.timer = TIMER_CONSTANTS[1];
+      this.timer = TIMER_DEFAULT;
     },
     changeStateTo(index) {
       this.timer = this.timers[this.timer.position + index];

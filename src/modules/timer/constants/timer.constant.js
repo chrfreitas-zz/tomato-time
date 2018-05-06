@@ -1,4 +1,4 @@
-const TIMER_CONSTANTS = [
+const TIMER_TYPES = [
   {
     position: 0,
     stateName: 'onShortBreak',
@@ -16,5 +16,6 @@ const TIMER_CONSTANTS = [
   },
 ];
 
+const TIMER_DEFAULT = TIMER_TYPES[1];
 
-export default TIMER_CONSTANTS;
+export { TIMER_TYPES, TIMER_DEFAULT };
