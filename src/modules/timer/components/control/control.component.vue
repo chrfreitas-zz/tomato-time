@@ -14,10 +14,10 @@ export default {
       this.$store.dispatch('play');
     },
     pause() {
-
+      this.$store.dispatch('pause');
     },
     stop() {
-
+      this.$store.dispatch('stop');
     },
   },
 };
