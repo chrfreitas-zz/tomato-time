@@ -1,7 +1,7 @@
 <template>
   <div class="timer">
-    <counter v-bind:timer="timer"/>
-    <control />
+    <counter/>
+    <control/>
     <actions v-bind:position="timer.position" />
   </div>
 </template>
@@ -13,7 +13,7 @@ import actions from './components/actions/actions.component';
 
 import { TIMER_DEFAULT } from './constants/timer.constant';
 
-let intervalId = 0;
+const intervalId = 0;
 
 export default {
   name: 'Timer',
@@ -27,20 +27,7 @@ export default {
     counter,
     actions,
   },
-  created() {
-    this.reset();
-  },
   methods: {
-    play() {
-      if (intervalId) {
-        return;
-      }
-
-      this.timer.seconds -= 1;
-      intervalId = setInterval(() => {
-        this.timer.seconds -= 1;
-      }, 1000);
-    },
     pause() {
       clearInterval(intervalId);
     },

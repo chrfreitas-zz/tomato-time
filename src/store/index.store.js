@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import timerStore from '../components/store/timer.store';
+import timerStore from '../modules/timer/store/timer.store';
 
 Vue.use(Vuex);
 

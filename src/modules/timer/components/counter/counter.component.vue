@@ -5,20 +5,14 @@
 </template>
 
 <script>
-import moment from 'moment';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Counter',
-  props: ['timer'],
   computed: {
-    timerFormatted() {
-      return this.convertToMinute(this.timer.seconds);
-    },
-  },
-  methods: {
-    convertToMinute(timer = 0) {
-      return moment(timer * 1000).format('mm:ss');
-    },
+    ...mapGetters([
+      'timerFormatted',
+    ]),
   },
 };
 </script>
