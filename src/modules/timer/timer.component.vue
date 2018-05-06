@@ -3,11 +3,7 @@
     <div class="counter">
       {{ timerFormatted }}
     </div>
-    <div class="controls">
-      <button class="play" v-on:click="play">Play</button>
-      <button class="pause" v-on:click="pause">Pause</button>
-      <button class="stop" v-on:click="stop">Stop</button>
-    </div>
+    <control />
     <div>
       <button v-on:click="changeStateTo(-1)"
               v-bind:disabled="disabledPrevious">Previous</button>
@@ -19,6 +15,8 @@
 
 <script>
 import moment from 'moment';
+
+import control from './components/control/control.component';
 import TIMER_CONSTANTS from './constants/timer.constant';
 
 let intervalId = 0;
@@ -30,6 +28,9 @@ export default {
       timer: {},
       timers: TIMER_CONSTANTS,
     };
+  },
+  components: {
+    control,
   },
   created() {
     this.reset();

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Timer from '@/components/timer.component';
+import Timer from '@/modules/timer/timer.component';
 
 Vue.use(Router);
 
