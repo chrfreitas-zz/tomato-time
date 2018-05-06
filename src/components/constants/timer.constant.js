@@ -1,13 +1,13 @@
 const TIMER_CONSTANTS = [
   {
     position: 0,
-    stateName: 'onWorking',
-    seconds: 1500,
+    stateName: 'onShortBreak',
+    seconds: 300,
   },
   {
     position: 1,
-    stateName: 'onShortBreak',
-    seconds: 300,
+    stateName: 'onWorking',
+    seconds: 1500,
   },
   {
     position: 2,

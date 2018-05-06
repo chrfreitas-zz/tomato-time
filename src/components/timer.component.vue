@@ -9,8 +9,10 @@
       <button class="stop" v-on:click="stop">Stop</button>
     </div>
     <div>
-      <button v-on:click="changeStateTo(1)">Next</button>
-      <button v-on:click="changeStateTo(-1)">Previous</button>
+      <button v-on:click="changeStateTo(-1)"
+              v-bind:disabled="disabledPrevious">Previous</button>
+      <button v-on:click="changeStateTo(1)"
+              v-bind:disabled="disabledNext">Next</button>
     </div>
   </div>
 </template>
@@ -36,6 +38,18 @@ export default {
     timerFormatted() {
       return this.convertToMinute(this.timer.seconds);
     },
+    disabledNext() {
+      if ((this.timer.position + 1) === this.timers.length) {
+        return true;
+      }
+      return false;
+    },
+    disabledPrevious() {
+      if (this.timer.position === 0) {
+        return true;
+      }
+      return false;
+    },
   },
   methods: {
     play() {
@@ -56,7 +70,7 @@ export default {
       this.reset();
     },
     reset() {
-      this.timer = TIMER_CONSTANTS[0];
+      this.timer = TIMER_CONSTANTS[1];
     },
     convertToMinute(timer = 0) {
       return moment(timer * 1000).format('mm:ss');
