@@ -1,22 +1,15 @@
 <template>
   <div class="timer">
-    <div class="counter">
-      {{ timerFormatted }}
-    </div>
+    <counter v-bind:timer="timer"/>
     <control />
-    <div>
-      <button v-on:click="changeStateTo(-1)"
-              v-bind:disabled="disabledPrevious">Previous</button>
-      <button v-on:click="changeStateTo(1)"
-              v-bind:disabled="disabledNext">Next</button>
-    </div>
+    <actions v-bind:position="timer.position"  timers="timers" />
   </div>
 </template>
 
 <script>
-import moment from 'moment';
-
 import control from './components/control/control.component';
+import counter from './components/counter/counter.component';
+import actions from './components/actions/actions.component';
 import TIMER_CONSTANTS from './constants/timer.constant';
 
 let intervalId = 0;
@@ -31,26 +24,11 @@ export default {
   },
   components: {
     control,
+    counter,
+    actions,
   },
   created() {
     this.reset();
-  },
-  computed: {
-    timerFormatted() {
-      return this.convertToMinute(this.timer.seconds);
-    },
-    disabledNext() {
-      if ((this.timer.position + 1) === this.timers.length) {
-        return true;
-      }
-      return false;
-    },
-    disabledPrevious() {
-      if (this.timer.position === 0) {
-        return true;
-      }
-      return false;
-    },
   },
   methods: {
     play() {
@@ -72,9 +50,6 @@ export default {
     },
     reset() {
       this.timer = TIMER_CONSTANTS[1];
-    },
-    convertToMinute(timer = 0) {
-      return moment(timer * 1000).format('mm:ss');
     },
     changeStateTo(index) {
       this.timer = this.timers[this.timer.position + index];
