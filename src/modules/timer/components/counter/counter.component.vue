@@ -9,10 +9,8 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'Counter',
-  computed: {
-    ...mapGetters([
-      'timerFormatted',
-    ]),
-  },
+  computed: mapGetters([
+    'timerFormatted',
+  ]),
 };
 </script>

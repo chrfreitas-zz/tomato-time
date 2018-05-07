@@ -18,18 +18,6 @@ export default {
     counter,
     actions,
   },
-  methods: {
-    // stop() {
-    //   this.pause();
-    //   this.reset();
-    // },
-    // reset() {
-    //   this.timer = TIMER_DEFAULT;
-    // },
-    // changeStateTo(index) {
-    //   this.timer = this.timers[this.timer.position + index];
-    // },
-  },
 };
 </script>
 

@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-import { TIMER_DEFAULT } from '../constants/timer.constant';
+import { TIMER_DEFAULT, TIMER_TYPES } from '../constants/timer.constant';
 
 let intervalID = 0;
 
@@ -15,6 +15,14 @@ const timerStore = {
       const timer = state.timer.seconds;
       return moment(timer * 1000).format('mm:ss');
     },
+    isDisabledNext(state) {
+      const lastPosition = TIMER_TYPES.length - 1;
+      return state.timer.position === lastPosition;
+    },
+    isDisabledPrevious(state) {
+      const firstPosition = 0;
+      return state.timer.position === firstPosition;
+    },
   },
   mutations: {
     decrease(state) {
@@ -23,6 +31,11 @@ const timerStore = {
     reset(state) {
       state.timer = {
         ...TIMER_DEFAULT,
+      };
+    },
+    changeTimerTo(state, payload) {
+      state.timer = {
+        ...TIMER_TYPES[state.timer.position + payload.index],
       };
     },
   },
@@ -39,6 +52,9 @@ const timerStore = {
     stop({ commit }) {
       clearInterval(intervalID);
       commit('reset');
+    },
+    changeTimerTo({ commit }, payload) {
+      commit('changeTimerTo', payload);
     },
   },
 };
