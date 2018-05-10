@@ -2,8 +2,6 @@ import moment from 'moment';
 
 import { TIMER_DEFAULT, TIMER_TYPES } from '../constants/timer.constant';
 
-console.log(TIMER_TYPES);
-
 let intervalID = 0;
 
 const stateInitial = {
