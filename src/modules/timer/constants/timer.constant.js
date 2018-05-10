@@ -1,19 +1,9 @@
+import Timer from './../classes/timer.class';
+
 const TIMER_TYPES = [
-  {
-    position: 0,
-    stateName: 'onShortBreak',
-    seconds: 300,
-  },
-  {
-    position: 1,
-    stateName: 'onWorking',
-    seconds: 1500,
-  },
-  {
-    position: 2,
-    stateName: 'onLongBreak',
-    seconds: 900,
-  },
+  new Timer(0, 300),
+  new Timer(1, 1500),
+  new Timer(2, 900),
 ];
 
 const TIMER_DEFAULT = TIMER_TYPES[1];
