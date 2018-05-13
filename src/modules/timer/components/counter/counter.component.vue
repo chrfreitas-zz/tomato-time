@@ -14,3 +14,10 @@ export default {
   ]),
 };
 </script>
+
+<style scoped>
+  .counter {
+    text-align: center;
+    font-size: 5em;
+  }
+</style>

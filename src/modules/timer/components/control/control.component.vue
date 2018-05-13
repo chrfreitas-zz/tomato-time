@@ -22,3 +22,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .controls {
+    display: flex;
+    justify-content: center;
+  }
+</style>
+

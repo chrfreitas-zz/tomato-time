@@ -1,9 +1,9 @@
 <template>
   <div class="actions">
       <button v-on:click="changeTimerTo(-1)"
-              v-bind:disabled="isDisabledPrevious">Previous</button>
+              v-bind:disabled="isDisabledPrevious"><</button>
       <button v-on:click="changeTimerTo(1)"
-              v-bind:disabled="isDisabledNext">Next</button>
+              v-bind:disabled="isDisabledNext">></button>
     </div>
 </template>
 
@@ -25,3 +25,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .actions {
+    display: flex;
+    justify-content: center;
+  }
+</style>
