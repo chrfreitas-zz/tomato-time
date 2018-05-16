@@ -1,9 +1,9 @@
 <template>
   <div class="actions">
       <button v-on:click="changeTimerTo(-1)"
-              v-bind:disabled="isDisabledPrevious"><</button>
+              v-bind:disabled="isDisabledPrevious">Previous</button>
       <button v-on:click="changeTimerTo(1)"
-              v-bind:disabled="isDisabledNext">></button>
+              v-bind:disabled="isDisabledNext">Next</button>
     </div>
 </template>
 
