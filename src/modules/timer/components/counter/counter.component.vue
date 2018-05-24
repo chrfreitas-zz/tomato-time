@@ -19,5 +19,6 @@ export default {
   .counter {
     text-align: center;
     font-size: 5em;
+    margin: 0 30px;
   }
 </style>

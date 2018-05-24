@@ -1,8 +1,14 @@
 <template>
   <div class="controls">
-      <button class="play" @click="play">Play</button>
-      <button class="pause" @click="pause">Pause</button>
-      <button class="stop" @click="stop">Stop</button>
+      <button class="btn" @click="play">
+        <i class="fas fa-play"></i>
+      </button>
+      <button class="btn" @click="pause">
+        <i class="fas fa-pause"></i>
+      </button>
+      <button class="btn" @click="stop">
+        <i class="fas fa-stop"></i>
+      </button>
     </div>
 </template>
 
@@ -27,6 +33,20 @@ export default {
   .controls {
     display: flex;
     justify-content: center;
+    margin: 25px 0 0 0;
   }
+
+  .btn {
+    border: 0;
+    background: transparent;
+    font-size: 1.8em;
+    cursor: pointer;
+    margin: 0 20px 0 0;
+  }
+
+  .btn:last-child {
+    margin: 0;
+  }
+
 </style>
 

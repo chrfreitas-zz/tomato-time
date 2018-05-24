@@ -1,9 +1,13 @@
 <template>
   <div class="actions">
-      <button v-on:click="changeTimerTo(-1)" v-bind:disabled="isDisabledPrevious">Previous</button>
+      <button class="btn" v-on:click="changeTimerTo(-1)" v-bind:disabled="isDisabledPrevious">
+              <i class="fas fa-angle-left"></i>
+      </button>
       <counter />
-      <button v-on:click="changeTimerTo(1)" v-bind:disabled="isDisabledNext">Next</button>
-    </div>
+      <button class="btn" v-on:click="changeTimerTo(1)" v-bind:disabled="isDisabledNext">
+        <i class="fas fa-angle-right"></i>
+      </button>
+  </div>
 </template>
 
 <script>
@@ -34,5 +38,12 @@ export default {
   .actions {
     display: flex;
     justify-content: center;
+  }
+
+  .btn {
+    border: 0;
+    background: transparent;
+    font-size: 3.5em;
+    cursor: pointer;
   }
 </style>
