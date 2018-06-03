@@ -20,5 +20,6 @@ export default {
     text-align: center;
     font-size: 5em;
     margin: 0 30px;
+    color: #fff;
   }
 </style>

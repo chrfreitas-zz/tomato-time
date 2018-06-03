@@ -45,5 +45,11 @@ export default {
     background: transparent;
     font-size: 3.5em;
     cursor: pointer;
+    color: #fff;
+  }
+
+  .btn[disabled] {
+    opacity: .3;
+    cursor: not-allowed;
   }
 </style>

@@ -42,6 +42,7 @@ export default {
     font-size: 1.8em;
     cursor: pointer;
     margin: 0 20px 0 0;
+    color: #fff;
   }
 
   .btn:last-child {
