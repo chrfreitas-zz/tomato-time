@@ -63,6 +63,7 @@ const actions = {
     commit('reset');
   },
   changeTimerTo({ commit }, payload) {
+    clearInterval(intervalID);
     commit('changeTimerTo', payload);
   },
 };
