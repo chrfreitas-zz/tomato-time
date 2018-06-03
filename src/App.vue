@@ -32,14 +32,14 @@ body {
 }
 
 .container.work {
-    background-color: red;
+    background-color: #c0392b;
 }
 
 .container.short {
-  background-color: green;
+  background-color: #16a085;
 }
 
 .container.long {
-  background-color: blue;
+  background-color: #2980b9;
 }
 </style>

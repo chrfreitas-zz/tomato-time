@@ -46,6 +46,10 @@ const mutations = {
 
 const actions = {
   play({ commit }) {
+    if (intervalID) {
+      return;
+    }
+
     commit('decrease');
     intervalID = setInterval(() => {
       commit('decrease');
@@ -59,6 +63,7 @@ const actions = {
     commit('reset');
   },
   changeTimerTo({ commit }, payload) {
+    clearInterval(intervalID);
     commit('changeTimerTo', payload);
   },
 };

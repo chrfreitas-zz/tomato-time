@@ -26,6 +26,4 @@ npm run interface
 
 # open cypress dashboard
 npm run cypress
-
-
 ```
