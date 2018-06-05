@@ -10,9 +10,12 @@
     "test": "jest --config test/unit/jest.conf.js --coverage",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build": "node build/build.js",
-    "server": "node api/server.js"
+    "server": "node api/server.js",
+    "interface": "npx cypress run",
+    "cypress": "npx cypress open"
   },
   "dependencies": {
+    "cypress": "^3.0.1",
     "express": "^4.16.3",
     "moment": "^2.22.1",
     "vue": "^2.5.2",

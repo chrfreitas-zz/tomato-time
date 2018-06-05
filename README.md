@@ -20,4 +20,10 @@ npm run unit
 
 # run all tests
 npm test
+
+# run all interface tests
+npm run interface
+
+# open cypress dashboard
+npm run cypress
 ```
