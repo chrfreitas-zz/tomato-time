@@ -2,7 +2,7 @@
   <div class="container" v-bind:class="classContainer" id="app">
     <router-view/>
 
-    <div class="water">
+    <div class="water" v-bind:style="{ height: waterHeight + '%' }">
       <svg class="water__wave water__wave_back" viewBox="0 0 560 20">
           <use xlink:href="#wave"></use>
       </svg>
@@ -29,6 +29,7 @@ export default {
   name: 'App',
   computed: mapGetters([
     'classContainer',
+    'waterHeight',
   ]),
 };
 </script>
