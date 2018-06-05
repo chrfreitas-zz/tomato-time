@@ -50,25 +50,40 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.container.work {
-  .water__wave_back,
-  .water__wave_front {
+.container.work .water {
+  background-color: #c0392b;
+}
+
+.container.work .water__wave_front {
     fill: #c0392b;
-  }
 }
 
-.container.short {
-  .water__wave_back,
-  .water__wave_front {
+.container.work .water__wave_back {
+    fill: #80251b;
+}
+
+.container.long .water {
+  background-color: #16a085;
+}
+
+.container.long .water__wave_front {
     fill: #16a085;
-  }
 }
 
-.container.long {
-  .water__wave_back,
-  .water__wave_front {
+.container.long .water__wave_back {
+    fill: #0d6050;
+}
+
+.container.short .water {
+  background-color: #2980b9;
+}
+
+.container.short .water__wave_front {
     fill: #2980b9;
-  }
+}
+
+.container.short .water__wave_back {
+    fill: #15496b;
 }
 
 .water {
@@ -77,8 +92,8 @@ body {
   width: 100%;
   bottom: 0;
   left: 0;
-  background: #32bafa;
   z-index: -1;
+  will-change: transform;
 }
 
 .water__wave {
@@ -89,15 +104,15 @@ body {
 
 .water__wave_back {
   right: 0;
-  fill: #2c7fbe;
   animation: wave-back 1.4s infinite linear;
+  will-change: transform;
 }
 
 .water__wave_front {
   left: 0;
-  fill: #32bafa;
   margin-bottom: -1px;
   animation: wave-front .7s infinite linear;
+  will-change: transform;
 }
 
 @keyframes wave-front {
