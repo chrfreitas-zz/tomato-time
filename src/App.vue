@@ -1,8 +1,8 @@
 <template>
-  <div class="container" v-bind:class="classContainer" id="app">
+  <div class="container" v-bind:class="getClassState" id="app">
     <router-view/>
 
-    <div class="water" v-bind:style="{ height: waterHeight + '%' }">
+    <div class="water" v-bind:style="{ height: getWaterHeight + '%' }">
       <svg class="water__wave water__wave_back" viewBox="0 0 560 20">
           <use xlink:href="./static/svg/wave.svg#wave"></use>
       </svg>
@@ -14,14 +14,16 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 export default {
   name: 'App',
-  computed: mapGetters([
-    'classContainer',
-    'waterHeight',
-  ]),
+  computed: {
+    getWaterHeight() {
+      return this.$store.state.timer.water.height;
+    },
+    getClassState() {
+      return this.$store.state.timer.timer.name;
+    },
+  },
 };
 </script>
 

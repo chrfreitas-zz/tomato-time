@@ -23,10 +23,6 @@ export default {
     counter,
   },
   computed: {
-    // change() {
-    //   console.log(this.$store.state.timer);
-    //   return 1;
-    // },
     ...mapGetters([
       'isDisabledNext',
       'isDisabledPrevious',

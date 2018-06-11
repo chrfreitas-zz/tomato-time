@@ -26,12 +26,6 @@ const getters = {
     const firstPosition = 0;
     return state.timer.position === firstPosition;
   },
-  classContainer(state) {
-    return state.timer.name;
-  },
-  waterHeight(state) {
-    return state.water.height;
-  },
 };
 
 const mutations = {
