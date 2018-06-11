@@ -1,6 +1,6 @@
 <template>
   <div class="counter">
-    {{ timerFormatted }}
+    {{ getTimerFormatted }}
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import { mapGetters } from 'vuex';
 export default {
   name: 'Counter',
   computed: mapGetters([
-    'timerFormatted',
+    'getTimerFormatted',
   ]),
 };
 </script>

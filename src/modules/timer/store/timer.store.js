@@ -14,7 +14,7 @@ const stateInitial = {
 };
 
 const getters = {
-  timerFormatted(state) {
+  getTimerFormatted(state) {
     const timer = state.timer.seconds;
     return moment(timer * 1000).format('mm:ss');
   },

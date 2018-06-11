@@ -48,6 +48,5 @@ export default {
   .btn:last-child {
     margin: 0;
   }
-
 </style>
 

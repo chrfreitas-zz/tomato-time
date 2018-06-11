@@ -7,6 +7,8 @@
       <button class="btn" v-on:click="changeTimerTo(1)" v-bind:disabled="isDisabledNext">
         <i class="fas fa-angle-right"></i>
       </button>
+
+
   </div>
 </template>
 
@@ -20,10 +22,17 @@ export default {
   components: {
     counter,
   },
-  computed: mapGetters([
-    'isDisabledNext',
-    'isDisabledPrevious',
-  ]),
+  computed: {
+    // change() {
+    //   console.log(this.$store.state.timer);
+    //   return 1;
+    // },
+    ...mapGetters([
+      'isDisabledNext',
+      'isDisabledPrevious',
+    ]),
+  },
+
   methods: {
     changeTimerTo(index) {
       this.$store.dispatch('changeTimerTo', {
