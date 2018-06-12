@@ -1,13 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import timerStore from '../modules/timer/store/timer.store';
+import timer from '../modules/timer/store/timer.store';
+import water from '../modules/water/store/water.store';
 
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
   modules: {
-    timer: timerStore,
+    timer,
+    water,
   },
 });
 

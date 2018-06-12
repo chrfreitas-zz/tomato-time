@@ -8,9 +8,6 @@ const stateInitial = {
   timer: {
     ...TIMER_DEFAULT,
   },
-  water: {
-    height: 100,
-  },
 };
 
 const getters = {
@@ -31,26 +28,22 @@ const getters = {
 const mutations = {
   decrease(state) {
     state.timer.seconds -= 1;
-    state.water.height -= 1;
   },
   reset(state) {
+    const position = state.timer.position;
     state.timer = {
-      ...TIMER_TYPES[state.timer.position],
+      ...TIMER_TYPES[position],
     };
-
-    state.water.height = 100;
   },
   clearInterval() {
     clearInterval(intervalID);
     intervalID = 0;
   },
-
   changeTo(state, payload) {
+    const nextPosition = state.timer.position + payload.index;
     state.timer = {
-      ...TIMER_TYPES[state.timer.position + payload.index],
+      ...TIMER_TYPES[nextPosition],
     };
-
-    state.water.height = 100;
   },
 };
 
