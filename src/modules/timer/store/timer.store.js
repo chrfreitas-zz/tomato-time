@@ -40,6 +40,11 @@ const mutations = {
 
     state.water.height = 100;
   },
+  clearInterval() {
+    clearInterval(intervalID);
+    intervalID = 0;
+  },
+
   changeTo(state, payload) {
     state.timer = {
       ...TIMER_TYPES[state.timer.position + payload.index],
@@ -60,19 +65,16 @@ const actions = {
       commit('decrease');
     }, 1000);
   },
-  pause() {
-    clearInterval(intervalID);
-    intervalID = 0;
+  pause({ commit }) {
+    commit('clearInterval');
   },
   stop({ commit }) {
-    clearInterval(intervalID);
+    commit('clearInterval');
     commit('reset');
-    intervalID = 0;
   },
   changeTo({ commit }, payload) {
-    clearInterval(intervalID);
+    commit('clearInterval');
     commit('changeTo', payload);
-    intervalID = 0;
   },
 };
 
