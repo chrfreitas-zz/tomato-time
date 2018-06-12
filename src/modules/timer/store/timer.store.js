@@ -40,7 +40,7 @@ const mutations = {
 
     state.water.height = 100;
   },
-  changeTimerTo(state, payload) {
+  changeTo(state, payload) {
     state.timer = {
       ...TIMER_TYPES[state.timer.position + payload.index],
     };
@@ -69,9 +69,9 @@ const actions = {
     commit('reset');
     intervalID = 0;
   },
-  changeTimerTo({ commit }, payload) {
+  changeTo({ commit }, payload) {
     clearInterval(intervalID);
-    commit('changeTimerTo', payload);
+    commit('changeTo', payload);
     intervalID = 0;
   },
 };

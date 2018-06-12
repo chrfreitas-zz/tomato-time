@@ -1,14 +1,12 @@
 <template>
   <div class="actions">
-      <button class="btn" v-on:click="changeTimerTo(-1)" v-bind:disabled="isDisabledPrevious">
+      <button class="btn" v-on:click="changeTo(-1)" v-bind:disabled="isDisabledPrevious">
               <i class="fas fa-angle-left"></i>
       </button>
       <counter />
-      <button class="btn" v-on:click="changeTimerTo(1)" v-bind:disabled="isDisabledNext">
+      <button class="btn" v-on:click="changeTo(1)" v-bind:disabled="isDisabledNext">
         <i class="fas fa-angle-right"></i>
       </button>
-
-
   </div>
 </template>
 
@@ -30,8 +28,8 @@ export default {
   },
 
   methods: {
-    changeTimerTo(index) {
-      this.$store.dispatch('changeTimerTo', {
+    changeTo(index) {
+      this.$store.dispatch('changeTo', {
         index,
       });
     },
