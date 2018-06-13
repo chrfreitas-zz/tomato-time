@@ -15,7 +15,7 @@ export default {
   },
   computed: {
     getClassState() {
-      return this.$store.state.timer.name;
+      return this.$store.state.timer.timer.name;
     },
   },
 };

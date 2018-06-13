@@ -14,7 +14,7 @@ export default {
   name: 'Water',
   computed: {
     getWaterHeight() {
-      return this.$store.state.water.height;
+      return this.$store.state.water.water.height;
     },
   },
 };
