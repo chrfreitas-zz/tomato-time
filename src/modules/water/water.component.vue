@@ -39,19 +39,19 @@ export default {
 
 .water__wave_back {
   right: 0;
-  animation: wave-back 1.4s infinite linear;
+  animation: wave-back 2s infinite linear;
   will-change: transform;
 }
 
 .water__wave_front {
   left: 0;
   margin-bottom: -1px;
-  animation: wave-front .7s infinite linear;
+  animation: wave-front 1s infinite linear;
   will-change: transform;
 }
 
 .container.work .water__wave_front {
-    fill: #c0392b;
+  fill: #c0392b;
 }
 
 .container.work .water__wave_back {
