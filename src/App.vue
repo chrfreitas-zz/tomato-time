@@ -40,13 +40,16 @@ body {
 
 .container.work .water {
   background-color: #c0392b;
+  border:1px solid #c0392b;
 }
 
 .container.long .water {
   background-color: #16a085;
+  border:1px solid #16a085;
 }
 
 .container.short .water {
   background-color: #2980b9;
+  border:1px solid #2980b9;
 }
 </style>
