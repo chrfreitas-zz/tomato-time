@@ -1,20 +1,20 @@
 const stateInitial = {
   water: {
-    height: 100,
+    height: window.innerHeight,
   },
 };
 
 const getters = {};
 
 const mutations = {
-  decrease(state) {
-    state.water.height -= 1;
+  decrease(state, rootState) {
+    state.water.height -= window.innerHeight / rootState.timer.timer.seconds;
   },
   reset(state) {
-    state.water.height = 100;
+    state.water.height = window.innerHeight;
   },
   changeTo(state) {
-    state.water.height = 100;
+    state.water.height = window.innerHeight;
   },
 };
 

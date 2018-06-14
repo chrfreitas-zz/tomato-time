@@ -12,7 +12,7 @@ const stateInitial = {
 
 const getters = {
   getTimerFormatted(state) {
-    const timer = state.timer.seconds;
+    const timer = state.timer.counter;
     return moment(timer * 1000).format('mm:ss');
   },
   isDisabledNext(state) {
@@ -27,7 +27,7 @@ const getters = {
 
 const mutations = {
   decrease(state) {
-    state.timer.seconds -= 1;
+    state.timer.counter -= 1;
   },
   reset(state) {
     const position = state.timer.position;
@@ -48,14 +48,14 @@ const mutations = {
 };
 
 const actions = {
-  play({ commit }) {
+  play({ commit, rootState }) {
     if (intervalID) {
       return;
     }
 
-    commit('decrease');
+    commit('decrease', rootState);
     intervalID = setInterval(() => {
-      commit('decrease');
+      commit('decrease', rootState);
     }, 1000);
   },
   pause({ commit }) {

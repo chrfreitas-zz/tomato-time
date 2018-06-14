@@ -1,5 +1,5 @@
 <template>
-  <div class="water" v-bind:style="{ height: getWaterHeight + '%' }">
+  <div class="water" v-bind:style="{ height: getWaterHeight + 'px' }">
     <svg class="water__wave water__wave_back" viewBox="0 0 560 20">
         <use xlink:href="./static/svg/wave.svg#wave"></use>
     </svg>
@@ -28,6 +28,7 @@ export default {
   bottom: 0;
   left: 0;
   z-index: -1;
+  transition: height .3s;
   will-change: transform;
 }
 
