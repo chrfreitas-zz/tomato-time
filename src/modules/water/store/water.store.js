@@ -18,11 +18,7 @@ const mutations = {
   },
 };
 
-const actions = {
-  stop({ commit }) {
-    commit('reset');
-  },
-};
+const actions = {};
 
 export default {
   state: stateInitial,

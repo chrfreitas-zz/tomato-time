@@ -20,18 +20,16 @@ export default {
   components: {
     counter,
   },
-  computed: {
-    ...mapGetters([
-      'isDisabledNext',
-      'isDisabledPrevious',
-    ]),
-  },
-
+  computed: mapGetters([
+    'isDisabledNext',
+    'isDisabledPrevious',
+  ]),
   methods: {
     changeTo(index) {
-      this.$store.dispatch('changeTo', {
+      const params = {
         index,
-      });
+      };
+      this.$store.dispatch('changeTo', params);
     },
   },
 };
