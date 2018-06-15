@@ -42,11 +42,23 @@ export default {
     font-size: 1.8em;
     cursor: pointer;
     margin: 0 20px 0 0;
-    color: #fff;
+    mix-blend-mode: difference;
   }
 
   .btn:last-child {
     margin: 0;
+  }
+
+  .work .btn {
+    color: #c0392b;
+  }
+
+  .long .btn {
+    color: #16a085;
+  }
+
+  .short .btn {
+    color: #2980b9;
   }
 </style>
 

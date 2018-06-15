@@ -46,11 +46,23 @@ export default {
     background: transparent;
     font-size: 3.5em;
     cursor: pointer;
-    color: #fff;
+    mix-blend-mode: difference;
   }
 
   .btn[disabled] {
     opacity: .3;
     cursor: not-allowed;
+  }
+
+  .work .btn {
+    color: #c0392b;
+  }
+
+  .long .btn {
+    color: #16a085;
+  }
+
+  .short .btn {
+    color: #2980b9;
   }
 </style>

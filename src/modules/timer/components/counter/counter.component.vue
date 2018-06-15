@@ -20,6 +20,18 @@ export default {
     text-align: center;
     font-size: 5em;
     margin: 0 30px;
-    color: #fff;
+    mix-blend-mode: difference;
+  }
+
+  .work .counter {
+    color: #c0392b;
+  }
+
+  .long .counter {
+    color: #16a085;
+  }
+
+  .short .counter {
+    color: #2980b9;
   }
 </style>
