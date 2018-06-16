@@ -1,7 +1,9 @@
-//import Vue from 'vue';
+import { shallowMount } from '@vue/test-utils';
+import Timer from '../../../src/modules/timer/timer.component';
 
-describe('Timer.vue', () => {
-  it('should render true', () => {
-    expect(true).toBe(true);
+describe('Timer', () => {
+  it('should create/match snapshot', () => {
+    const wrapper = shallowMount(Timer);
+    expect(wrapper).toMatchSnapshot();
   });
 });
