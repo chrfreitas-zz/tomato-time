@@ -24,4 +24,7 @@ module.exports = {
     '!src/router/index.js',
     '!**/node_modules/**',
   ],
+  testPathIgnorePatterns: [
+    '<rootDir>/cypress/',
+  ],
 };
