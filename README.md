@@ -26,4 +26,7 @@ npm run interface
 
 # open cypress dashboard
 npm run cypress
+
+#open electron application
+npm run electron
 ```
