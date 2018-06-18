@@ -1,9 +1,10 @@
 {
   "name": "tomato-time",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "A pomodoro timer project",
   "author": "Christian Freitas <chrfreitas@gmail.com>",
   "private": true,
+  "main": "./electron-starter.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --open --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -12,7 +13,8 @@
     "build": "node build/build.js",
     "server": "node api/server.js",
     "interface": "npx cypress run",
-    "cypress": "npx cypress open"
+    "cypress": "npx cypress open",
+    "electron": "electron ."
   },
   "dependencies": {
     "cypress": "^3.0.1",
@@ -39,6 +41,7 @@
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
+    "electron": "^2.0.2",
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^11.3.0",
     "eslint-friendly-formatter": "^3.0.0",
