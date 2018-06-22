@@ -40,7 +40,7 @@ const mutations = {
     intervalID = 0;
   },
   changeTo(state, payload) {
-    const nextPosition = state.timer.position + payload.index;
+    const nextPosition = state.timer.position + payload;
     state.timer = {
       ...TIMER_TYPES[nextPosition],
     };

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 import counter from '../counter/counter.component';
 
@@ -24,14 +24,9 @@ export default {
     'isDisabledNext',
     'isDisabledPrevious',
   ]),
-  methods: {
-    changeTo(index) {
-      const params = {
-        index,
-      };
-      this.$store.dispatch('changeTo', params);
-    },
-  },
+  methods: mapActions([
+    'changeTo',
+  ]),
 };
 </script>
 
