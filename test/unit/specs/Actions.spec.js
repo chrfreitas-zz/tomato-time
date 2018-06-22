@@ -8,13 +8,19 @@ localVue.use(Vuex)
 
 describe('Timer:Actions', () => {
   let store
+  let actions
 
   beforeEach(() => {
+    actions = {
+      changeTo: jest.fn()
+    }
+
     const timer = {
       getters: {
         isDisabledNext: jest.fn(),
         isDisabledPrevious: jest.fn()
-      }
+      },
+      actions,
     }
     store = new Vuex.Store({
       modules: {
@@ -26,5 +32,11 @@ describe('Timer:Actions', () => {
   it('should create/match snapshot', () => {
     const wrapper = shallowMount(Actions, {store, localVue});
     expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it('should stop the timer', () => {
+    const wrapper = shallowMount(Actions, {store, localVue});
+    wrapper.find('button:first-child').trigger('click');
+    expect(actions.changeTo.mock.calls).toHaveLength(1)
   });
 });
