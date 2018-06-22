@@ -7,7 +7,6 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 
 describe('Timer:Actions', () => {
-  let getters
   let store
 
   beforeEach(() => {

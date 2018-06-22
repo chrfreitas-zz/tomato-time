@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timer:Control should create/match snapshot 1`] = `
+<div class="controls">
+    <button class="btn fas fa-play"></button>
+    <button class="btn fas fa-pause"></button>
+    <button class="btn fas fa-stop"></button>
+</div>
+`;

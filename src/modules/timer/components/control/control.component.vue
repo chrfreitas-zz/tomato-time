@@ -1,13 +1,10 @@
 <template>
   <div class="controls">
-      <button class="btn" @click="play">
-        <i class="fas fa-play"></i>
+      <button class="btn fas fa-play" @click="play">
       </button>
-      <button class="btn" @click="pause">
-        <i class="fas fa-pause"></i>
+      <button class="btn fas fa-pause" @click="pause">
       </button>
-      <button class="btn" @click="stop">
-        <i class="fas fa-stop"></i>
+      <button class="btn fas fa-stop" @click="stop">
       </button>
     </div>
 </template>
