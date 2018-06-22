@@ -13,19 +13,15 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'Control',
-  methods: {
-    play() {
-      this.$store.dispatch('play');
-    },
-    pause() {
-      this.$store.dispatch('pause');
-    },
-    stop() {
-      this.$store.dispatch('stop');
-    },
-  },
+  methods: mapActions([
+    'play',
+    'pause',
+    'stop',
+  ]),
 };
 </script>
 
