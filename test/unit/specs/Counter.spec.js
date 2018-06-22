@@ -1,20 +1,19 @@
 import Vuex from 'vuex'
 import { shallowMount, createLocalVue } from '@vue/test-utils'
 
-import Actions from '../../../src/modules/timer/components/actions/actions.component';
+import Counter from '../../../src/modules/timer/components/counter/counter.component';
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
-describe('Timer:Actions', () => {
+describe('Timer:Counter', () => {
   let getters
   let store
 
   beforeEach(() => {
     const timer = {
       getters: {
-        isDisabledNext: jest.fn(),
-        isDisabledPrevious: jest.fn()
+        getTimerFormatted: jest.fn(),
       }
     }
     store = new Vuex.Store({
@@ -25,7 +24,7 @@ describe('Timer:Actions', () => {
   })
 
   it('should create/match snapshot', () => {
-    const wrapper = shallowMount(Actions, {store, localVue});
+    const wrapper = shallowMount(Counter, {store, localVue});
     expect(wrapper.html()).toMatchSnapshot();
   });
 });
