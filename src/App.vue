@@ -1,7 +1,7 @@
 <template>
   <div class="container" v-bind:class="getClassState" id="app">
     <router-view/>
-    <water />
+    <water v-if="!isChromeOrSafari"/>
   </div>
 </template>
 
@@ -16,6 +16,11 @@ export default {
   computed: {
     getClassState() {
       return this.$store.state.timer.timer.name;
+    },
+    isChromeOrSafari() {
+      const isChrome = /Chrome/.test(navigator.userAgent);
+      const isSafari = /Safari/.test(navigator.userAgent);
+      return (isChrome || isSafari);
     },
   },
 };
@@ -51,14 +56,5 @@ body {
 .container.short .water {
   background-color: #2980b9;
   border:1px solid #2980b9;
-}
-
-/* Hack for webkit issues. Find a new solution*/
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  .container.short .water,
-  .container.work .water,
-  .container.long .water{
-    background-color: #fff;
-  }
 }
 </style>
