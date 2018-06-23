@@ -15,7 +15,7 @@
     "build": "node build/build.js",
     "server": "node api/server.js",
     "cypress": "npx cypress open",
-    "cypress:interface": "npx cypress run",
+    "cypress:headless": "npx cypress run",
     "electron": "electron ."
   },
   "dependencies": {

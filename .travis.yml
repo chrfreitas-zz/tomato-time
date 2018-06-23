@@ -3,6 +3,8 @@ node_js:
   - "9.8.0"
 before_install:
   - npm install -g npm@5.6.0
+after_deploy:
+  - npm run cypress:headless
 cache:
   directories:
     - "node_modules"
