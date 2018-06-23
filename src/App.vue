@@ -52,4 +52,13 @@ body {
   background-color: #2980b9;
   border:1px solid #2980b9;
 }
+
+/* Hack for webkit issues. Find a new solution*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .container.short .water,
+  .container.work .water,
+  .container.long .water{
+    background-color: #fff;
+  }
+}
 </style>
