@@ -42,25 +42,23 @@ export default {
     font-size: 3.5em;
     cursor: pointer;
     mix-blend-mode: difference;
-    color: #000;
   }
 
   .btn[disabled] {
     opacity: .3;
     cursor: not-allowed;
   }
-
-  @supports (mix-blend-mode: difference) {
-    .work .btn {
-      color: #c0392b;
-    }
-
-    .long .btn {
-      color: #16a085;
-    }
-
-    .short .btn {
-      color: #2980b9;
-    }
+  
+  .work .btn {
+    color: #c0392b;
   }
+
+  .long .btn {
+    color: #16a085;
+  }
+
+  .short .btn {
+    color: #2980b9;
+  }
+  
 </style>
