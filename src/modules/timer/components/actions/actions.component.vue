@@ -3,7 +3,7 @@
       <button class="btn" v-on:click="changeTo(-1)" v-bind:disabled="isDisabledPrevious">
               <i class="fas fa-angle-left"></i>
       </button>
-      <counter />
+      <slot />
       <button class="btn" v-on:click="changeTo(1)" v-bind:disabled="isDisabledNext">
         <i class="fas fa-angle-right"></i>
       </button>
@@ -13,13 +13,8 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
-import counter from '../counter/counter.component';
-
 export default {
   name: 'Actions',
-  components: {
-    counter,
-  },
   computed: mapGetters([
     'isDisabledNext',
     'isDisabledPrevious',
@@ -48,7 +43,7 @@ export default {
     opacity: .3;
     cursor: not-allowed;
   }
-  
+
   .work .btn {
     color: #c0392b;
   }
@@ -60,5 +55,4 @@ export default {
   .short .btn {
     color: #2980b9;
   }
-  
 </style>
