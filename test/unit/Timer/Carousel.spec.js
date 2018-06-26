@@ -12,7 +12,8 @@ describe('Timer:Carousel', () => {
 
   beforeEach(() => {
     actions = {
-      changeTo: jest.fn()
+      next: jest.fn(),
+      previous: jest.fn(),
     }
 
     const timer = {
@@ -34,9 +35,15 @@ describe('Timer:Carousel', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it('should stop the timer', () => {
+  it('should change to next timer', () => {
     const wrapper = shallowMount(Carousel, {store, localVue});
     wrapper.find('button:first-child').trigger('click');
-    expect(actions.changeTo.mock.calls).toHaveLength(1)
+    expect(actions.previous.mock.calls).toHaveLength(1)
+  });
+
+  it('should change to previous timer', () => {
+    const wrapper = shallowMount(Carousel, {store, localVue});
+    wrapper.find('button:last-child').trigger('click');
+    expect(actions.next.mock.calls).toHaveLength(1)
   });
 });
