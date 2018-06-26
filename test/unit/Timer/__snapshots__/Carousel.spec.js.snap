@@ -1,11 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Timer:Actions should create/match snapshot 1`] = `
-<div class="actions">
+exports[`Timer:Carousel should create/match snapshot 1`] = `
+<div class="carousel">
     <button class="btn">
         <i class="fas fa-angle-left"></i>
     </button>
-    <counter-stub></counter-stub>
     <button class="btn">
         <i class="fas fa-angle-right"></i>
     </button>

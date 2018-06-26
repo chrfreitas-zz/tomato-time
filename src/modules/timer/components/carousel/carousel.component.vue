@@ -1,5 +1,5 @@
 <template>
-  <div class="actions">
+  <div class="carousel">
       <button class="btn" v-on:click="changeTo(-1)" v-bind:disabled="isDisabledPrevious">
               <i class="fas fa-angle-left"></i>
       </button>
@@ -14,7 +14,7 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  name: 'Actions',
+  name: 'Carousel',
   computed: mapGetters([
     'isDisabledNext',
     'isDisabledPrevious',
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style scoped>
-  .actions {
+  .carousel {
     display: flex;
     justify-content: center;
   }

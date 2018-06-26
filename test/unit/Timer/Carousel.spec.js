@@ -1,12 +1,12 @@
 import Vuex from 'vuex'
 import { shallowMount, createLocalVue } from '@vue/test-utils'
 
-import Actions from '../../../src/modules/timer/components/actions/actions.component';
+import Carousel from '../../../src/modules/timer/components/carousel/carousel.component';
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
-describe('Timer:Actions', () => {
+describe('Timer:Carousel', () => {
   let store
   let actions
 
@@ -30,12 +30,12 @@ describe('Timer:Actions', () => {
   })
 
   it('should create/match snapshot', () => {
-    const wrapper = shallowMount(Actions, {store, localVue});
+    const wrapper = shallowMount(Carousel, {store, localVue});
     expect(wrapper.html()).toMatchSnapshot();
   });
 
   it('should stop the timer', () => {
-    const wrapper = shallowMount(Actions, {store, localVue});
+    const wrapper = shallowMount(Carousel, {store, localVue});
     wrapper.find('button:first-child').trigger('click');
     expect(actions.changeTo.mock.calls).toHaveLength(1)
   });

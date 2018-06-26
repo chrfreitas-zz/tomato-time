@@ -1,22 +1,22 @@
 <template>
   <div class="timer">
-    <actions>
+    <carousel>
       <counter />
-    </actions>
+    </carousel>
     <control/>
   </div>
 </template>
 
 <script>
 import control from './components/control/control.component';
-import actions from './components/actions/actions.component';
+import carousel from './components/carousel/carousel.component';
 import counter from './components/counter/counter.component';
 
 export default {
   name: 'Timer',
   components: {
     control,
-    actions,
+    carousel,
     counter,
   },
 };
