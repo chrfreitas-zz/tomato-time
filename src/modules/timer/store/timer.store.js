@@ -65,9 +65,13 @@ const actions = {
     commit('clearInterval');
     commit('reset');
   },
-  changeTo({ commit }, payload) {
+  previous({ commit }) {
     commit('clearInterval');
-    commit('changeTo', payload);
+    commit('changeTo', -1);
+  },
+  next({ commit }) {
+    commit('clearInterval');
+    commit('changeTo', +1);
   },
 };
 
